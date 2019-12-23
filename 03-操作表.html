@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>滴滴工程</title>
+		<link rel="shortcuticon" href="/favicon.ico" type="image/x-icon" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+	<body>
+		<!-- actionsheet（操作表）   sheet 是表的意思    css: cascading style sheet 层叠样式表 -->
+		<!-- 通过a标签就可以设置一个锚点 -->
+		<!-- <a href="#xxx">点击弹出操作表</a> -->
+		
+		<!-- 当点击这个按钮时，需要把面的操作表弹出来 -->
+		<button type="button" class="mui-btn mui-btn-primary mui-btn-block">蓝色</button>
+		
+		<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#">菜单1</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#">菜单2</a>
+				</li>
+			</ul>
+			<!-- 取消菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#sheet1"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		// 1）得到上面的button按钮 
+		let btn = document.getElementsByTagName("button")[0]
+		
+		// 2) 给btn注册一个点击事件    btn叫事件源   click叫事件类型（点击事件）  function(){} 监听器
+		btn.onclick = function(){
+			mui('#sheet1').popover('toggle');
+		}
+	</script>
+</html>
